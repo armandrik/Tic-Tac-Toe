@@ -1,0 +1,263 @@
+$primary-color: #162c36;
+$secondary-color: #193845;
+$btn-color: #b0bfbf;
+$o-color: #e6c149;
+$x-color: #45b3a9;
+$font-color: #0a0a0a;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: $primary-color;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.game-container {
+    width: clamp(477px, 50%, 453px);
+    h1 {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+        background-color: $secondary-color;
+        border-radius: 20px;
+        padding: 15px;
+        span {
+            font-size: 48px;
+            &:first-of-type {
+                color: $x-color;
+            }
+            &:nth-child(2) {
+                color: $btn-color;
+            }
+            &:last-of-type {
+                color: $o-color;
+            }
+        }
+    }
+    .status {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        height: 5vh;
+        .x-o {
+            display: flex;
+            align-items: center;
+            width: 33%;
+            .status-x {
+                color: $x-color;
+                font-size: 40px;
+            }
+            .status-o {
+                color: $o-color;
+                font-size: 40px;
+            }
+        }
+        .turn-play {
+            width: 33%;
+            width: clamp(100px, 50%, 150px);
+            color: $btn-color;
+            background-color: $secondary-color;
+            border-radius: 11px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 5px 1px -2px $x-color;
+            transition: .5s;
+        }
+        .btn-container {
+            width: 33%;
+            display: flex;
+            justify-content: flex-end;
+            button {
+                width: 40px;
+                height: 40px;
+                border-radius: 8px;
+                border: none;
+                cursor: pointer;
+                font-size: 19px;
+                background-color: $btn-color;
+                color: $secondary-color;
+                box-shadow: 0px 4px 0px 0px #6e7979;
+                &:active {
+                    box-shadow: none;
+                    margin-top: 4px;
+                }
+            }
+        }
+    }
+    .board-game {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 147px 147px 146px;
+        grid-template-rows: 130px 130px 130px;
+        grid-gap: 20px;
+        grid-auto-flow: dense;
+        margin-top: 50px;
+        background-color: transparent;
+        .board {
+            // margin-left: 65%;
+            background-color: $secondary-color;
+            height: 130px;
+            cursor: pointer;
+            border-radius: 20px;
+            box-shadow: 0px 5px 1px -2px #41adfd9e;
+            transition: .5s;
+        }
+    }
+    .res-container {
+        width: 101%;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 50px;
+        .x-won {
+            width: 28%;
+            height: 7vh;
+            background-color: $x-color;
+            text-align: center;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .tie {
+            width: 28%;
+            height: 7vh;
+            background-color: $btn-color;
+            text-align: center;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 34px;
+            p {
+                font-weight: 600;
+            }
+        }
+        .o-won {
+            width: 28%;
+            height: 7vh;
+            background-color: $o-color;
+            text-align: center;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            p {
+                font-weight: bolder;
+            }
+        }
+    }
+}
+
+.x {
+    cursor: default;
+}
+
+.o {
+    cursor: default;
+}
+
+.x::after {
+    content: "✖";
+    font-size: 88px;
+    color: $x-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.o::after {
+    content: "〇";
+    font-size: 90px;
+    color: $o-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.x-design {
+    font-size: 88px;
+    color: $secondary-color;
+    text-align: center;
+    cursor: default;
+}
+
+.o-design {
+    font-size: 95px;
+    color: $secondary-color;
+    text-align: center;
+    padding: 0 10px 0 0;
+    cursor: default;
+}
+
+@media screen and (max-width:480px) {
+    .game-container {
+        width: 400px;
+        .board-game {
+            display: grid;
+            grid-template-columns: 122px 122px 121px;
+            grid-template-rows: 110px 110px 110px;
+            .board {
+                height: 110px;
+                border-radius: 20px;
+            }
+        }
+    }
+    .x::after {
+        font-size: 5rem;
+    }
+    .o::after {
+        font-size: 5rem;
+    }
+    .x-design {
+        font-size: 5rem;
+    }
+    .o-design {
+        font-size: 5rem;
+    }
+}
+
+@media screen and (max-width:410px) {
+    .game-container {
+        width: 300px;
+        h1 {
+            padding: 10px;
+            span {
+                font-size: 32px;
+            }
+        }
+        .board-game {
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: 94px 94px 94px;
+            grid-template-rows: 90px 90px 90px;
+            grid-gap: 10px;
+            .board {
+                height: 90px;
+            }
+        }
+    }
+    .x::after {
+        font-size: 4rem;
+    }
+    .o::after {
+        font-size: 4rem;
+    }
+    .x-design {
+        font-size: 4rem;
+    }
+    .o-design {
+        font-size: 4rem;
+    }
+}

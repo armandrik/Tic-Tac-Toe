@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a4e95c8d4d.js" crossorigin="anonymous"></script>
+    <title>tic tac toe</title>
+</head>
+
+<body>
+    <div class="game-container">
+        <h1>
+            <span>TIC</span>
+            <span>TAC</span>
+            <span>TOE</span>
+        </h1>
+        <div class="status">
+            <div class="x-o">
+                <h2 class="status-x">✖</h2>
+                <h2 class="status-o">〇</h2>
+            </div>
+            <h2 class="turn-play">✖ TURN</h2>
+            <div class="btn-container">
+                <button class="reset"><i class="fas fa-redo-alt"></i></button>
+            </div>
+        </div>
+        <div class="board-game">
+            <div class="board"></div>
+            <div class="board"></div>
+            <div class="board"></div>
+            <div class="board"></div>
+            <div class="board"></div>
+            <div class="board"></div>
+            <div class="board"></div>
+            <div class="board"></div>
+            <div class="board"></div>
+        </div>
+        <div class="res-container">
+            <div class="x-won">
+                <p>✖</p>
+                <h2 class="x-round-won">0</h2>
+            </div>
+            <div class="tie">
+                <p>TIES</p>
+                <h2 class="ties-rounad">0</h2>
+            </div>
+            <div class="o-won">
+                <p>〇</p>
+                <h2 class="o-round-won">0</h2>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/app.js"></script>
+
+</html>
